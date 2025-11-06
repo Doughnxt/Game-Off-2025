@@ -5,28 +5,43 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //movement variables
+    [Header("Movement variables")]
     [SerializeField] private float speed = 3;
     public float direction;
     public bool movementEnabled;
     public bool facingRight;
 
-    //compenent variables
+    // Compenent variables
     private BoxCollider2D coll;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
     private PlayerHealth playerHealth;
 
-    //jump variables
+    [Header("Jump variables")]
     [SerializeField] private float jumpStrength = 7f;
     [SerializeField] private float fallMultiplier = 3.5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float jumpTime = .5f;
     [SerializeField] private float jumpTimeCounter;
     private bool isJumping;
+    private int jumpCounter = 1;
+    [SerializeField] private float jumpGraceTime = 0.08f;
+    private bool canStillJump = false;
 
-    //dash variables
+    [Header("Wall Jump variables")]
+    private WallCheck wallCheck;
+    private bool canWallJump;
+    public bool canWallJumpAgain;
+    [SerializeField] private float wallJumpBufferTime = 0.15f;
+    [SerializeField] private float wallJumpDuration = 0.1f;
+    [SerializeField] private Vector2 wallJumpStrength = new Vector2(5f, 25);
+    private bool isWallJumping;
+    private bool isWallSliding;
+    [SerializeField] private float wallSlideSpeed = 10f;
+    private float normalGravity;
+
+    [Header("Dash variables")]
     [SerializeField] private float dashForce = 5f;
     [SerializeField] private float dashTime = .5f;
     private bool dashEnabled;
@@ -34,19 +49,19 @@ public class PlayerMovement : MonoBehaviour
     private int dashCounter = 1;
     public bool isDashing;
 
-    //pushing variables
+    // Pushing variables
     public bool canPush = false;
     private BlockCheck blockCheck;
 
-    //enums
-    private enum MovementState { idle, running, jumping, falling, pushing, dashing, }
+    // Enums
+    private enum MovementState { idle, running, jumping, falling, pushing, dashing, sliding }
     MovementState state;
 
-    //misc. variables
+    [Header("Misc. variables")]
     [SerializeField] private float loadTime = .3f;
     private SaveManager saveManager;
 
-    //sound variables
+    // [Header("Sound variables")]
     //private AudioSource walkingSound;
     //[SerializeField] private AudioSource dashSound;
     //private bool walkingSoundPlaying;
@@ -60,12 +75,18 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
         blockCheck = FindObjectOfType<BlockCheck>();
+        wallCheck = FindObjectOfType<WallCheck>();
         saveManager = FindObjectOfType<SaveManager>();
         //walkingSound = GetComponent<AudioSource>();
         movementEnabled = true;
         dashEnabled = true;
         dashCounter = 1;
         isDashing = false;
+        isWallJumping = false;
+        canWallJump = true;
+        canWallJumpAgain = true;
+        isWallSliding = false;
+        normalGravity = rb.gravityScale;
         //walkingSoundPlaying = false;
         StartCoroutine(FreezePlayerAtStart());
         transform.position = saveManager.lastCheckpointPos;
@@ -80,7 +101,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (movementEnabled)
             {
-                Jump();
+                WallSlide();
+                if (!wallCheck.isTouchingWall)
+                {
+                    if (!isWallJumping)
+                    {
+                        Jump();
+                    }
+                }
+                else
+                {
+                    WallJump();
+                }
+
                 if (saveManager.dashObtained)
                 {
                     Dash();
@@ -130,15 +163,23 @@ public class PlayerMovement : MonoBehaviour
         //Falling
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            if (!isWallSliding)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            }
         }
 
         //Jumping
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        //Jumping
+        if ((Input.GetButtonDown("Jump") && IsGrounded()) || (Input.GetButtonDown("Jump") && canStillJump))
         {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            rb.velocity = Vector2.up * jumpStrength;
+            if (jumpCounter == 1)
+            {
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                rb.velocity = Vector2.up * jumpStrength;
+                jumpCounter = 0;
+            }
         }
 
         if (Input.GetButton("Jump") && isJumping == true)
@@ -151,15 +192,73 @@ public class PlayerMovement : MonoBehaviour
 
             if (IsGrounded() && jumpTimeCounter <= 0)
             {
-                isJumping = true;
+                isJumping = false;
                 jumpTimeCounter = jumpTime;
-                rb.velocity = Vector2.up * jumpStrength;
             }
         }
 
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+        }
+
+        if (IsGrounded())
+        {
+            canStillJump = true;
+            jumpCounter = 1;
+
+        }
+
+        if (IsGrounded())
+        {
+            canStillJump = true;
+
+        }
+
+        else if (!IsGrounded())
+        {
+            StartCoroutine(JumpGracePeriod());
+        }
+
+    }
+
+    private IEnumerator JumpGracePeriod()
+    {
+        yield return new WaitForSeconds(jumpGraceTime);
+        canStillJump = false;
+    }
+
+    private void WallJump()
+    {
+        // Switch Animator Controller
+        if (Input.GetButtonDown("Jump") && canWallJump && canWallJumpAgain)
+        {
+            canWallJumpAgain = false;
+            isWallJumping = true;
+            canWallJump = false;
+            StartCoroutine(WallJumpBuffer());
+            rb.velocity = new Vector2(direction * wallJumpStrength.x, wallJumpStrength.y);
+        }
+    }
+
+    private IEnumerator WallJumpBuffer()
+    {
+        yield return new WaitForSeconds(wallJumpDuration);
+        isWallJumping = false;
+        yield return new WaitForSeconds(wallJumpBufferTime);
+        canWallJump = true;
+    }
+
+    private void WallSlide()
+    {
+        if (!IsGrounded() && wallCheck.isTouchingWall && direction != 0 && !isWallJumping)
+        {
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -wallSlideSpeed));
+        }
+        else
+        {
+            isWallSliding = false;
         }
 
     }
