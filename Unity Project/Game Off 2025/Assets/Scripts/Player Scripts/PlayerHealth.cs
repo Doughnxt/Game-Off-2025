@@ -12,10 +12,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject[] healthIndicator;
     [SerializeField] private GameObject healthUI;
     private SpriteRenderer sprite;
-    private bool canTakeDamage;
 
-
-    // hazard respawn variables
+        // hazard respawn variables
     private Transform lastCheckpoint;
     [SerializeField] private float bufferAfterRespawn = 0.1f;
     private PlayerMovement player;
@@ -40,7 +38,6 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         levelLoader = FindObjectOfType<LevelLoader>();
         anim = GetComponent<Animator>();
-        canTakeDamage = true;
     }
 
     private void Update()

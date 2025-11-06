@@ -32,14 +32,19 @@ public class PlayerMovement : MonoBehaviour
     private bool dashEnabled;
     [SerializeField] private float dashCooldown = .3f;
     private int dashCounter = 1;
+    public bool isDashing;
+
+    //pushing variables
+    public bool canPush = false;
+    private BlockCheck blockCheck;
 
     //enums
-    private enum MovementState { idle, running, jumping, falling, pushing, dashing, healing }
+    private enum MovementState { idle, running, jumping, falling, pushing, dashing, }
     MovementState state;
 
     //misc. variables
     [SerializeField] private float loadTime = .3f;
-    //private SavepointManager savepointManager;
+    private SaveManager saveManager;
 
     //sound variables
     //private AudioSource walkingSound;
@@ -54,13 +59,16 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
-        //savepointManager = FindObjectOfType<SavepointManager>();
+        blockCheck = FindObjectOfType<BlockCheck>();
+        saveManager = FindObjectOfType<SaveManager>();
         //walkingSound = GetComponent<AudioSource>();
         movementEnabled = true;
         dashEnabled = true;
         dashCounter = 1;
+        isDashing = false;
         //walkingSoundPlaying = false;
         StartCoroutine(FreezePlayerAtStart());
+        transform.position = saveManager.lastCheckpointPos;
     }
 
 
@@ -73,7 +81,10 @@ public class PlayerMovement : MonoBehaviour
             if (movementEnabled)
             {
                 Jump();
-                Dash();
+                if (saveManager.dashObtained)
+                {
+                    Dash();
+                }
             }
         }
 
@@ -81,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
         {
             dashCounter = 1;
         }
-
     }
 
     private void FixedUpdate()
@@ -174,7 +184,14 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dashing()
     {
         movementEnabled = false;
+        rb.velocity = Vector2.zero;
         dashEnabled = false;
+        isDashing = true;
+        if (saveManager.dashUpgraded)
+        {
+            Physics2D.IgnoreLayerCollision(10, 12, true);
+            // Switch animator controller for upgraded dash
+        }
         state = MovementState.dashing;
         //dashSound.Play();
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
@@ -187,8 +204,12 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector2.left * dashForce, ForceMode2D.Impulse);
         }
         yield return new WaitForSeconds(dashTime);
+        Physics2D.IgnoreLayerCollision(10, 12, false);
+        rb.velocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        isDashing = false;
         movementEnabled = true;
+
         if (!IsGrounded() && rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
@@ -200,18 +221,47 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         dashEnabled = true;
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //pushing blocks
+        if (collision.gameObject.CompareTag("Pushable Block"))
+        {
+            if (Input.GetButton("Push"))
+            {
+                canPush = true;
+            }
+            else
+            {
+                canPush = false;
+            }
+        }
+    }
 
     private void ManageState()
     {
         if (dashEnabled)
         {
+            if (blockCheck != null)
+            {
+                if (IsGrounded())
+                {
+                    if (blockCheck.isTouchingBlock && canPush)
+                    {
+                        state = MovementState.pushing;
+                    }
+                }
+            }
+
             if (IsGrounded() && direction != 0)
             {
-                state = MovementState.running;
-                //if (!walkingSoundPlaying)
+                if (!blockCheck.isTouchingBlock)
                 {
-                    //walkingSound.Play();
-                    //walkingSoundPlaying = true;
+                    state = MovementState.running;
+                    //if (!walkingSoundPlaying)
+                    {
+                        // walkingSound.Play();
+                        // walkingSoundPlaying = true;
+                    }
                 }
             }
             else if (direction == 0 && IsGrounded())
@@ -233,7 +283,6 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.dashing;
         }
 
-
         if (state != MovementState.running)
         {
             //if (walkingSoundPlaying)
@@ -244,8 +293,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         anim.SetInteger("MoveState", (int)state);
-
     }
+
 
     private IEnumerator FreezePlayerAtStart()
     {
