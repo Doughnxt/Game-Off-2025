@@ -6,12 +6,18 @@ public class PushableBlock : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PlayerMovement player;
-    public int blocksStacked;
+    private bool canBePushed;
+    private BlockCheck blockCheck;
+    private BoxCollider2D coll;
+    private bool playerIsTouching;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        blockCheck = FindObjectOfType<BlockCheck>();
+
     }
 
     private void Update()
@@ -22,36 +28,45 @@ public class PushableBlock : MonoBehaviour
         }
         else
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
             rb.mass = 10;
         }
 
+        // Use boxcast to check for other block
+    }
+    public bool IsStacked()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0.1f, Vector2.up, .1f, Physics2D.AllLayers, 0.001f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerIsTouching = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        rb.bodyType = RigidbodyType2D.Dynamic;
         rb.velocity = new Vector2(0, rb.velocity.y);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            blocksStacked++;
-            gameObject.transform.SetParent(collision.transform);
+            playerIsTouching = false;
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        if (IsStacked() && !playerIsTouching)
         {
-            rb.velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+            if (collision.gameObject.GetComponent<PushableBlock>() != null)
+            {
+                rb.velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+                rb.bodyType = RigidbodyType2D.Kinematic;
+            }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<PushableBlock>() != null)
-        {
-            blocksStacked--;
-            gameObject.transform.SetParent(null);
-        }
-    }
+
 }

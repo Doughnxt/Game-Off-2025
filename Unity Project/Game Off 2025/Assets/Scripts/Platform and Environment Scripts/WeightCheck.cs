@@ -6,6 +6,16 @@ public class WeightCheck : MonoBehaviour
 {
     public int blockCount;
     public bool playerIsWeighingDown;
+    public bool blockcollisionDetected;
+    public int numberOfBlocksDetected;
+
+    private void Update()
+    {
+        if (numberOfBlocksDetected < 1)
+        {
+            blockcollisionDetected = false;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,8 +25,15 @@ public class WeightCheck : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<PushableBlock>() != null)
         {
-            blockCount++;
-            blockCount += collision.gameObject.GetComponent<PushableBlock>().blocksStacked;
+            numberOfBlocksDetected++;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        {
+            blockcollisionDetected = true;
         }
     }
 
@@ -28,8 +45,7 @@ public class WeightCheck : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<PushableBlock>() != null)
         {
-            blockCount--;
-            blockCount -= collision.gameObject.GetComponent<PushableBlock>().blocksStacked;
+            numberOfBlocksDetected--;
         }
     }
 }
