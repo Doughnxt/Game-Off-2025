@@ -6,18 +6,18 @@ public class Gate : MonoBehaviour
 {
     private BoxCollider2D box;
     private Animator animator;
-    private KeyCounter keyCounter;
+    private KeyManager keyManager;
     [SerializeField] private Range range;
     [SerializeField] private TypeOfGate type;
     [SerializeField] private Lever lever;
     [SerializeField] private bool opened;
-    [SerializeField] private AudioSource gateAudio;
+    //[SerializeField] private AudioSource gateAudio;
 
     private enum TypeOfGate { key, lever }
 
     void Start()
     {
-        keyCounter = FindObjectOfType<KeyCounter>();
+        keyManager = FindObjectOfType<KeyManager>();
         box = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
     }
@@ -41,18 +41,18 @@ public class Gate : MonoBehaviour
 
     private void Open()
     {
-        gateAudio.Play();
+        //gateAudio.Play();
         box.enabled = false;
-        animator.SetTrigger("Open");
         opened = true;
+        animator.SetTrigger("Open");
     }
 
     private void Close()
     {
-        gateAudio.Play();
+        //gateAudio.Play();
         box.enabled = true;
-        animator.SetTrigger("Close");
         opened = false;
+        animator.SetTrigger("Close");
     }
 
     private void KeyGate()
@@ -63,9 +63,9 @@ public class Gate : MonoBehaviour
             {
                 if (Input.GetButtonDown("Interact"))
                 {
-                    if (keyCounter.keyCount > 0)
+                    if (keyManager.keyCount > 0)
                     {
-                        keyCounter.keyCount--;
+                        keyManager.keyCount--;
                         Open();
                     }
                 }
