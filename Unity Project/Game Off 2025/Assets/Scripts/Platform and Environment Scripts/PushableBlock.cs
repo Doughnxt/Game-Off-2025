@@ -6,6 +6,7 @@ public class PushableBlock : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PlayerMovement player;
+    public int blocksStacked;
 
     void Start()
     {
@@ -23,10 +24,34 @@ public class PushableBlock : MonoBehaviour
         {
             rb.mass = 10;
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         rb.velocity = new Vector2(0, rb.velocity.y);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        {
+            blocksStacked++;
+            gameObject.transform.SetParent(collision.transform);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        {
+            rb.velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        {
+            blocksStacked--;
+            gameObject.transform.SetParent(null);
+        }
     }
 }

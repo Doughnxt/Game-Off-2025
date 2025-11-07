@@ -8,10 +8,9 @@ public class SwingingPlatform : MonoBehaviour
     [SerializeField] private GameObject platform1;
     [SerializeField] private GameObject platform2;
     [SerializeField] private float halfwayPointPosition;
-    [SerializeField] private float buffer = 0.05f;
     [SerializeField] private bool switched;
 
-    // WHEN SETTING UP, MAKE SURE PARENT OBJECT 1 IS HALF THE RADIUS OF ROTATION ABOVE PARENT OBJECT 2
+    // WHEN SETTING UP, MAKE SURE PARENT OBJECT 1.75 IS HALF THE RADIUS OF ROTATION ABOVE PARENT OBJECT 2
 
     private void Update()
     {
