@@ -11,7 +11,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private bool vertical = false;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (vertical)
         {

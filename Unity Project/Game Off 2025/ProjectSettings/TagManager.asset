@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pushable Block
   - Dash Push Block
+  - Stay On Platform
   layers:
   - Default
   - TransparentFX
