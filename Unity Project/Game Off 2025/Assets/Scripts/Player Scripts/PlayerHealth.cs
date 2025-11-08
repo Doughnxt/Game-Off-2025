@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // health variables
+    [Header("Health variables")]
     public int maxHealth = 4;
     public int currentHealth;
     [SerializeField] private GameObject[] healthContainer;
@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private GameObject healthUI;
     private SpriteRenderer sprite;
 
-        // hazard respawn variables
+    [Header("Hazard respawn variables")]
     private Transform lastCheckpoint;
     [SerializeField] private float bufferAfterRespawn = 0.1f;
     private PlayerMovement player;

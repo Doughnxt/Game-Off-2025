@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Savepoint : MonoBehaviour
+public class HazardRespawnCheckpoint : MonoBehaviour
 {
     private SaveManager save;
 
@@ -16,8 +15,7 @@ public class Savepoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            save.lastSavepointPos = transform.position;
+            save.lastCheckpointPos = transform.position;
         }
     }
-
 }

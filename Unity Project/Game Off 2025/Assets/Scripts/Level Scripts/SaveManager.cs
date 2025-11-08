@@ -9,6 +9,7 @@ public class SaveManager : MonoBehaviour
 
     // Saved Values
     public Vector2 lastCheckpointPos;
+    public Vector2 lastSavepointPos;
     public bool dashObtained;
     public bool dashUpgraded;
 
