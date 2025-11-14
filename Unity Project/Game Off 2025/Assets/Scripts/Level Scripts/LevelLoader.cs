@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private float transitionTime = .3f;
+    [SerializeField] private float transitionTime = .7f;
     [SerializeField] private Animator transition;
-    //private SavepointManager savepointManager;
+    [SerializeField] private Image fadeImage;
+    [SerializeField] private Color mainFadeColor;
+    [SerializeField] private Color whiteFadeColor;
+    private SaveManager saveManager;
     private bool lowerVolume;
 
+    private void Awake()
+    {
+        saveManager = FindObjectOfType<SaveManager>();
+        if (saveManager.lastLevelIndex != saveManager.currentLevelIndex)
+        {
+            saveManager.currentLevelIndex = saveManager.lastLevelIndex;
+            fadeImage.color = whiteFadeColor;
+        }
+        else
+        {
+            fadeImage.color = mainFadeColor;
+        }
+    }
     private void Start()
     {
-        //savepointManager = FindObjectOfType<SavepointManager>();
+        Invoke(nameof(ResetFadeColor), 2 * transitionTime);
     }
 
     private void Update()
@@ -26,8 +44,14 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    private void ResetFadeColor()
+    {
+        fadeImage.color = mainFadeColor;
+    }
+
     public void LoadNextLevel()
     {
+        fadeImage.color = whiteFadeColor;
         lowerVolume = true;
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }

@@ -6,17 +6,16 @@ public class PushableBlock : MonoBehaviour
 {
     private Rigidbody2D rb;
     private PlayerMovement player;
-    private bool canBePushed;
-    private BlockCheck blockCheck;
     private BoxCollider2D coll;
     private bool playerIsTouching;
+    private Vector3 startPos;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        blockCheck = FindObjectOfType<BlockCheck>();
+        startPos = transform.position;
 
     }
 
@@ -32,7 +31,6 @@ public class PushableBlock : MonoBehaviour
             rb.mass = 10;
         }
 
-        // Use boxcast to check for other block
     }
     public bool IsStacked()
     {
@@ -67,6 +65,11 @@ public class PushableBlock : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Kinematic;
             }
         }
+    }
+
+    public void RespawnBlock()
+    {
+        transform.position = startPos;
     }
 
 }

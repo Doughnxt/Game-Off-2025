@@ -7,11 +7,13 @@ public class DriftingBlocks : MonoBehaviour
     private BoxCollider2D coll;
     private Rigidbody2D rb;
     [SerializeField] private LayerMask playerLayer;
+    private Vector3 startPos;
 
     private void Start()
     {
         coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        startPos = transform.position;
     }
 
     public bool OnTop()
@@ -32,5 +34,10 @@ public class DriftingBlocks : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public void RespawnBlock()
+    {
+        transform.position = startPos;
     }
 }

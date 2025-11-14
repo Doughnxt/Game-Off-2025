@@ -8,7 +8,15 @@ public class Hazard : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerPositionReset>().ResetPosition();
+            collision.GetComponent<PlayerHealth>().currentHealth--;
+            if (collision.GetComponent<PlayerHealth>().currentHealth > 0)
+            {
+                collision.GetComponent<PlayerPositionReset>().ResetPosition();
+            }
+        }
+        if (collision.gameObject.GetComponent<PushableBlock>() != null)
+        {
+            collision.gameObject.GetComponent<PushableBlock>().RespawnBlock();
         }
     }
 }

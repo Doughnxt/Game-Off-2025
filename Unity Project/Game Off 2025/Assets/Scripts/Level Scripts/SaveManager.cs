@@ -7,11 +7,14 @@ public class SaveManager : MonoBehaviour
 {
     private static SaveManager instance;
 
+
     // Saved Values
     public Vector2 lastCheckpointPos;
     public Vector2 lastSavepointPos;
     public bool dashObtained;
     public bool dashUpgraded;
+    public int lastLevelIndex;
+    public int currentLevelIndex;
 
     private void Awake()
     {
@@ -26,4 +29,9 @@ public class SaveManager : MonoBehaviour
         }
 
     }
+    private void Start()
+    {
+        lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
 }

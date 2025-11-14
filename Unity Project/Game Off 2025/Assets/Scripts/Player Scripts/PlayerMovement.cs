@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     MovementState state;
 
     [Header("Misc. variables")]
-    [SerializeField] private float loadTime = .3f;
+    [SerializeField] private float loadTime = .65f;
     private SaveManager saveManager;
 
     // [Header("Sound variables")]
@@ -374,7 +374,15 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (!IsGrounded() && rb.velocity.y < -.1f)
             {
-                state = MovementState.falling;
+                if (!isWallSliding)
+                {
+                    state = MovementState.falling;
+                }
+                else
+                {
+                    state = MovementState.sliding;
+                }
+
             }
         }
         else
