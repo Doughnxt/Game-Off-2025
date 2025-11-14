@@ -16,7 +16,11 @@ public class Hazard : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<PushableBlock>() != null)
         {
-            collision.gameObject.GetComponent<PushableBlock>().RespawnBlock();
+            if (this.gameObject.GetComponent<Waves>() == null)
+            {
+                collision.gameObject.GetComponent<PushableBlock>().RespawnBlock();
+            }
+
         }
     }
 }

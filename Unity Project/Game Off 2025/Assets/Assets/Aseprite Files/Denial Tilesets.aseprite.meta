@@ -120,7 +120,27 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
-  animatedSpriteImportData: []
+  animatedSpriteImportData:
+  - name: Denial Tilesets
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 96
+      height: 96
+    spriteID: 6cca2e77d7b2f1145af59e11702533e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -129,7 +149,16 @@ ScriptedImporter:
     layerFlags: 0
     layerType: 0
     blendMode: 0
-    cells: []
+    cells:
+    - name: Denial Tilesets
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      spriteId: 6cca2e77d7b2f1145af59e11702533e9
     linkedCells: []
     parentIndex: -1
   platformSettings:
