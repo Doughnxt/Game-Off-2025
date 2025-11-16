@@ -5,7 +5,7 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     [SerializeField] private float windStrength = 300;
-    [SerializeField] private bool windActive;
+    public bool windActive;
     private PlayerMovement player;
 
     private void Start()

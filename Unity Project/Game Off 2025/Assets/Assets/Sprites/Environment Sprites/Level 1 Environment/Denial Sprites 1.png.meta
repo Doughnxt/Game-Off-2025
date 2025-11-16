@@ -488,7 +488,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,6 +496,90 @@ TextureImporter:
       bones: []
       spriteID: f859305560828594e887d0a2f5b90106
       internalID: 311535900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Denial Sprites 1_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ebe01512375a44ca102bf29c67c786
+      internalID: 1204206545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Denial Sprites 1_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0275fa7c0e2c5c4fbfbdaeb0627bb13
+      internalID: -343055677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Denial Sprites 1_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c5d1fe27968c24dbd9b3ea6ed96867
+      internalID: 346918566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Denial Sprites 1_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2abd09cf12c6b42a0b09575e026df2
+      internalID: -902789886
       vertices: []
       indices: 
       edges: []
@@ -521,7 +605,11 @@ TextureImporter:
       Denial Sprites 1_15: -59719701
       Denial Sprites 1_16: 316748647
       Denial Sprites 1_17: 311535900
+      Denial Sprites 1_18: 1204206545
+      Denial Sprites 1_19: -343055677
       Denial Sprites 1_2: -1354251156
+      Denial Sprites 1_20: 346918566
+      Denial Sprites 1_21: -902789886
       Denial Sprites 1_3: -409470920
       Denial Sprites 1_4: 1873756562
       Denial Sprites 1_5: -1208532392

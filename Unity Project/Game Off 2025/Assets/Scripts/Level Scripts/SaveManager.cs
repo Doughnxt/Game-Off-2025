@@ -29,7 +29,7 @@ public class SaveManager : MonoBehaviour
         }
 
     }
-    private void Start()
+    private void OnEnable()
     {
         lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
     }

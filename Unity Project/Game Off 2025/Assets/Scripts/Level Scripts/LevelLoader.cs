@@ -15,21 +15,18 @@ public class LevelLoader : MonoBehaviour
     private SaveManager saveManager;
     private bool lowerVolume;
 
-    private void Awake()
+    private void Start()
     {
         saveManager = FindObjectOfType<SaveManager>();
         if (saveManager.lastLevelIndex != saveManager.currentLevelIndex)
         {
-            saveManager.currentLevelIndex = saveManager.lastLevelIndex;
             fadeImage.color = whiteFadeColor;
+            saveManager.currentLevelIndex = saveManager.lastLevelIndex;
         }
         else
         {
             fadeImage.color = mainFadeColor;
         }
-    }
-    private void Start()
-    {
         Invoke(nameof(ResetFadeColor), 2 * transitionTime);
     }
 

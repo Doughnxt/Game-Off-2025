@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class DriftingBlocks : MonoBehaviour
 {
-    private BoxCollider2D coll;
     private Rigidbody2D rb;
-    [SerializeField] private LayerMask playerLayer;
     private Vector3 startPos;
+    [SerializeField] private GameObject blockers;
 
     private void Start()
     {
-        coll = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
+        rb.bodyType = RigidbodyType2D.Static;
+        blockers.SetActive(false);
     }
 
-    public bool OnTop()
-    {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0.1f, Vector2.up, .1f, playerLayer);
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (OnTop() && collision.gameObject.CompareTag("Player"))
-        {
-            rb.velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            rb.velocity = Vector2.zero;
+            blockers.SetActive(true);
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.velocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            blockers.SetActive(false);
+            rb.bodyType = RigidbodyType2D.Static;
         }
     }
 
