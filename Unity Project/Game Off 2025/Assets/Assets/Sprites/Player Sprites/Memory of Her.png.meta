@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 386371b939bd46449a1db1907c246b6c
+guid: a51c2c2e3f8f26d43976ab620a1c66d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,304 +123,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Denial Sprites 1_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 56
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 807db4e31b2ae824ea037ee99dea0b21
-      internalID: 1077653878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_2
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 0
-        width: 4
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8f7cdeb8ef94334caa28414441dd3ce
-      internalID: -1354251156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94dd98fba95757840a94a772f552d7bf
-      internalID: -409470920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0543fc6eacaa603468d66e3361b0b36c
-      internalID: 1873756562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_5
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 16
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 438ffb898ed6a8842a8e070ce3bce898
-      internalID: -1208532392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_0
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd656970a6eb8474da5941ef296cb7f6
-      internalID: 1406136533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 40
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de14e184d5f0486409ec02c2711ee4b9
-      internalID: 1282915923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36947b848dc8ebf4cb86229c8c73de00
-      internalID: -2057010069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_8
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 32
-        width: 1
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88689b4a6d5e180468a23acb3b449168
-      internalID: 1227359123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_9
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 30
-        width: 16
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f59627d71b3471439639ba6cbda86d6
-      internalID: -456145855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_10
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 48
-        width: 4
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 588a2af63d26a5a4c9cabd8ee1175bbb
-      internalID: 996339296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_11
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 48
-        width: 4
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5fa4e99283948074594a776e7fe6208b
-      internalID: -510522793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_12
+      name: Memory of Her_0
       rect:
         serializedVersion: 2
         x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77a0a5a66d8ec8b41a5ce97040a9e00a
-      internalID: 564708540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 381a1bbe2207eb54181ce79ed05c17d2
-      internalID: -2060387251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_14
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 48
         width: 16
         height: 16
@@ -431,18 +137,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7cf5b37bb69eff41965e563507a4042
-      internalID: -524615667
+      spriteID: 1b8138de2d24e784da520a96ba22b081
+      internalID: 1866419165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_15
+      name: Memory of Her_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b03b90f6130104e8e3494eca6fda14
+      internalID: 276216707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56fc3186db2bc74aa7fac4eda975a1d
+      internalID: -39545067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -452,18 +200,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ea11389fecba84583142e198c3ef87
-      internalID: -59719701
+      spriteID: 2b1d0006ae9eb5747bc91483f8881dd2
+      internalID: -507717404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_16
+      name: Memory of Her_4
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
+        x: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -473,18 +221,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 603dedb28bbb8f84fb575c7ca23d3295
-      internalID: 316748647
+      spriteID: 086775d58cc87884fa83b007b70129a2
+      internalID: -976683616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_17
+      name: Memory of Her_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2557c0a289cc7647a677ff753accbdb
+      internalID: 1614093731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b278356ea2f1d084bac63ef296f20b26
+      internalID: 713011595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_7
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -494,17 +284,458 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f859305560828594e887d0a2f5b90106
-      internalID: 311535900
+      spriteID: a502b1688cc1a64438a91781f3bda525
+      internalID: 105655650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_18
+      name: Memory of Her_8
       rect:
         serializedVersion: 2
         x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7cffc6b26b0fa4ea24761efc3d3281
+      internalID: 146044906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bfa2493effc6e42826bf6a2be27e87
+      internalID: -278048260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dbd9bfe6ecb5f46a1d1ebccf98010d
+      internalID: 1259264568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c26ebae6e72a714da6ec1b088304994
+      internalID: 723930223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8bca3aca8d9184d9788b7cae1772b1
+      internalID: -873526844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108696d9edfd4de49b2063a7da6c48a2
+      internalID: -432519397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7897d672a7947c94da876a823e44d3be
+      internalID: -1064073117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6924b857de1b147a7fe02997d525bd
+      internalID: 1081928659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_16
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33689313e99d4dc40898d93126d8c7fb
+      internalID: 849003923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3441df2d203584f814237f41380e77
+      internalID: 900185515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_18
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a558deff238d544485ca7634cd3ac25
+      internalID: -1978657990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb3c31508d73034d8afa49ab5989910
+      internalID: 812361908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_20
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c99951c69b58b8419bac7935cba352a
+      internalID: 223475086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a354bf9069ed2bb4d9e59c9bc3fa4631
+      internalID: 487824969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_22
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa2ab90ff5d0204b97b13b22bf1cbdf
+      internalID: 1372692012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82602539f2a90bb45b12f064e14eb7ec
+      internalID: -382330264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_24
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be33de48865dc841a559a967c93f5f8
+      internalID: -1577708872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_25
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e39df94a266f941a269a29a858f10e
+      internalID: 1113774523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e98173061267b4ca0b4e1c871baadb
+      internalID: -95477721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_27
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3c983f245f45743b7c514316d456e4
+      internalID: -1432804545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_28
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c624c4e06a48842b3c41699950fadc
+      internalID: -682152964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_29
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 16
         height: 16
@@ -515,18 +746,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95ebe01512375a44ca102bf29c67c786
-      internalID: 1204206545
+      spriteID: a40601f8c1ac2b94e8e390f79df1c254
+      internalID: 1489605617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_19
+      name: Memory of Her_30
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -536,60 +767,81 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0275fa7c0e2c5c4fbfbdaeb0627bb13
-      internalID: -343055677
+      spriteID: 51a69b59a71a0c7439d7bafa4df3ad8d
+      internalID: 872530712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Denial Sprites 1_20
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0c5d1fe27968c24dbd9b3ea6ed96867
-      internalID: 346918566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_21
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df2abd09cf12c6b42a0b09575e026df2
-      internalID: -902789886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Denial Sprites 1_22
+      name: Memory of Her_31
       rect:
         serializedVersion: 2
         x: 32
-        y: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465860addf0cbe949b1d4d9330a37e63
+      internalID: 65641471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6092eb152906b554382e3ddfc30a711b
+      internalID: -539216801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7306b420bbc379a459eaf2eea8cefc2a
+      internalID: -1197115797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -599,8 +851,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67b3474dd40629d4fa3d6db30fc5a495
-      internalID: 94427944
+      spriteID: 68baff84aba4b5c4a9d0775393bffb0a
+      internalID: -456380833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Memory of Her_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa69fb5e7621d6d469d89de6def05de7
+      internalID: -1761972410
       vertices: []
       indices: 
       edges: []
@@ -616,29 +889,42 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Denial Sprites 1_0: 1406136533
-      Denial Sprites 1_1: 1077653878
-      Denial Sprites 1_10: 996339296
-      Denial Sprites 1_11: -510522793
-      Denial Sprites 1_12: 564708540
-      Denial Sprites 1_13: -2060387251
-      Denial Sprites 1_14: -524615667
-      Denial Sprites 1_15: -59719701
-      Denial Sprites 1_16: 316748647
-      Denial Sprites 1_17: 311535900
-      Denial Sprites 1_18: 1204206545
-      Denial Sprites 1_19: -343055677
-      Denial Sprites 1_2: -1354251156
-      Denial Sprites 1_20: 346918566
-      Denial Sprites 1_21: -902789886
-      Denial Sprites 1_22: 94427944
-      Denial Sprites 1_3: -409470920
-      Denial Sprites 1_4: 1873756562
-      Denial Sprites 1_5: -1208532392
-      Denial Sprites 1_6: 1282915923
-      Denial Sprites 1_7: -2057010069
-      Denial Sprites 1_8: 1227359123
-      Denial Sprites 1_9: -456145855
+      Memory of Her_0: 1866419165
+      Memory of Her_1: 276216707
+      Memory of Her_10: 1259264568
+      Memory of Her_11: 723930223
+      Memory of Her_12: -873526844
+      Memory of Her_13: -432519397
+      Memory of Her_14: -1064073117
+      Memory of Her_15: 1081928659
+      Memory of Her_16: 849003923
+      Memory of Her_17: 900185515
+      Memory of Her_18: -1978657990
+      Memory of Her_19: 812361908
+      Memory of Her_2: -39545067
+      Memory of Her_20: 223475086
+      Memory of Her_21: 487824969
+      Memory of Her_22: 1372692012
+      Memory of Her_23: -382330264
+      Memory of Her_24: -1577708872
+      Memory of Her_25: 1113774523
+      Memory of Her_26: -95477721
+      Memory of Her_27: -1432804545
+      Memory of Her_28: -682152964
+      Memory of Her_29: 1489605617
+      Memory of Her_3: -507717404
+      Memory of Her_30: 872530712
+      Memory of Her_31: 65641471
+      Memory of Her_32: -539216801
+      Memory of Her_33: -1197115797
+      Memory of Her_34: -456380833
+      Memory of Her_35: -1761972410
+      Memory of Her_4: -976683616
+      Memory of Her_5: 1614093731
+      Memory of Her_6: 713011595
+      Memory of Her_7: 105655650
+      Memory of Her_8: 146044906
+      Memory of Her_9: -278048260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

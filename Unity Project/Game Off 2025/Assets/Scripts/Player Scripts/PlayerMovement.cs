@@ -54,8 +54,8 @@ public class PlayerMovement : MonoBehaviour
     private BlockCheck blockCheck;
 
     // Enums
-    private enum MovementState { idle, running, jumping, falling, pushing, dashing, sliding }
-    MovementState state;
+    public enum MovementState { idle, running, jumping, falling, pushing, dashing, sliding }
+    public MovementState state;
 
     [Header("Misc. variables")]
     [SerializeField] private float loadTime = .65f;

@@ -16,6 +16,8 @@ public class SaveManager : MonoBehaviour
     public int lastLevelIndex;
     public int currentLevelIndex;
 
+    public bool windCutsceneWatched;
+
     private void Awake()
     {
         if (instance == null)

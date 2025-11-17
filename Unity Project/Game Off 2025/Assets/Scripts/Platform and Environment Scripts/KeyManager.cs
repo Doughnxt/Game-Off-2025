@@ -5,7 +5,19 @@ using UnityEngine;
 public class KeyManager : MonoBehaviour
 {
     public int keyCount;
-    // add more stuff for displaying the keys to the UI
+    [SerializeField] private GameObject keyLine;
+
+    private void Update()
+    {
+        if (keyCount > 0)
+        {
+            keyLine.SetActive(true);
+        }
+        else
+        {
+            keyLine.SetActive(false);
+        }
+    }
 
 }
 
