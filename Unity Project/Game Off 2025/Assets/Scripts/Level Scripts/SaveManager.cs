@@ -8,7 +8,7 @@ public class SaveManager : MonoBehaviour
     private static SaveManager instance;
 
 
-    // Saved Values
+    [Header("Saved Values")]
     public Vector2 lastCheckpointPos;
     public Vector2 lastSavepointPos;
     public bool dashObtained;
@@ -16,7 +16,9 @@ public class SaveManager : MonoBehaviour
     public int lastLevelIndex;
     public int currentLevelIndex;
 
+    [Header("Denial Level Values")]
     public bool windCutsceneWatched;
+    public bool stringsCutsceneWatched;
 
     private void Awake()
     {
