@@ -18,10 +18,10 @@ public class LevelLoader : MonoBehaviour
     private void Start()
     {
         saveManager = FindObjectOfType<SaveManager>();
-        if (saveManager.lastLevelIndex != saveManager.currentLevelIndex)
+        if (saveManager.transitioningToNextLevel)
         {
             fadeImage.color = whiteFadeColor;
-            saveManager.currentLevelIndex = saveManager.lastLevelIndex;
+            saveManager.transitioningToNextLevel = false;
         }
         else
         {
@@ -38,6 +38,10 @@ public class LevelLoader : MonoBehaviour
             {
                 AudioListener.volume -= Time.deltaTime;
             }
+        }
+        if (saveManager.transitioningToNextLevel)
+        {
+            fadeImage.color = whiteFadeColor;
         }
     }
 

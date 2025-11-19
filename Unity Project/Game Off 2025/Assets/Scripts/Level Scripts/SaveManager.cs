@@ -13,8 +13,7 @@ public class SaveManager : MonoBehaviour
     public Vector2 lastSavepointPos;
     public bool dashObtained;
     public bool dashUpgraded;
-    public int lastLevelIndex;
-    public int currentLevelIndex;
+    public bool transitioningToNextLevel;
 
     [Header("Denial Level Values")]
     public bool windCutsceneWatched;
@@ -32,10 +31,6 @@ public class SaveManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-    }
-    private void OnEnable()
-    {
-        lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
 }
