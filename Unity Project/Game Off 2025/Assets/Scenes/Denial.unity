@@ -16895,6 +16895,7 @@ MonoBehaviour:
   endPos: {x: 18.61, y: 8.07}
   speed: 5
   vertical: 1
+  waitTimeBeforeTurnAround: 0
 --- !u!61 &1692240600
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30935,10 +30936,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1664340971768925699, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1514007380, guid: ffc7547c015c4734a819ddffe31fff85, type: 3}
+    - target: {fileID: 2628085383416657789, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: m_Size.y
+      value: 0.063595615
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628085383416657789, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.032547217
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628085383416657789, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 2706476053708081307, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
       propertyPath: m_Name
       value: Weighted Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2965414582230982132, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877876621581989586, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: -1514007380, guid: ffc7547c015c4734a819ddffe31fff85, type: 3}
+    - target: {fileID: 3877876621581989586, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
+      propertyPath: weighedDownSprite
+      value: 
+      objectReference: {fileID: 2106890520, guid: ffc7547c015c4734a819ddffe31fff85, type: 3}
     - target: {fileID: 4083664683162611691, guid: 6e3a7bf8419efde44b493b41cc657a17, type: 3}
       propertyPath: m_LocalPosition.x
       value: 318.71

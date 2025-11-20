@@ -13,6 +13,7 @@ public class PlayerPositionReset : MonoBehaviour
     private PlayerMovement player;
     private Rigidbody2D rb;
     private DriftingBlocks[] driftingBlocks;
+    private MovingPlatform[] movingPlatforms;
 
 
     private void Start()
@@ -23,6 +24,7 @@ public class PlayerPositionReset : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform.position = saveManager.lastSavepointPos;
         driftingBlocks = FindObjectsOfType<DriftingBlocks>();
+        movingPlatforms = FindObjectsOfType<MovingPlatform>();
     }
     public void ResetPosition()
     {
@@ -46,6 +48,10 @@ public class PlayerPositionReset : MonoBehaviour
         foreach (var item in driftingBlocks)
         {
             item.RespawnBlock();
+        }
+        foreach (var item in movingPlatforms)
+        {
+            item.ResetPlatform();
         }
         rb.bodyType = RigidbodyType2D.Dynamic;
         yield return new WaitForSeconds(playerFreezeTime);
