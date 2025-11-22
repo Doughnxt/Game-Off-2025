@@ -19,6 +19,9 @@ public class SaveManager : MonoBehaviour
     public bool windCutsceneWatched;
     public bool stringsCutsceneWatched;
 
+    [Header("Anger Level Values")]
+    public bool dashCutsceneWatched;
+
     private void Awake()
     {
         if (instance == null)

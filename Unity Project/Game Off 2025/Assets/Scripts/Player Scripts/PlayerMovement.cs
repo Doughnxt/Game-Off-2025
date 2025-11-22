@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         normalGravity = rb.gravityScale;
         //walkingSoundPlaying = false;
         StartCoroutine(FreezePlayerAtStart());
-        transform.position = saveManager.lastCheckpointPos;
     }
 
 

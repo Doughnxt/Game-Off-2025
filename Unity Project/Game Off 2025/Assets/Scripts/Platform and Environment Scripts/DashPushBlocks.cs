@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class DashPushBlocks : MonoBehaviour
 {
-    private BlockCheck blockCheck;
     private PlayerMovement playerMovement;
     [SerializeField] private bool onRightEnd;
     [SerializeField] private Transform rightEndCap;
     [SerializeField] private Transform leftEndCap;
     [SerializeField] private float speed = 20;
     private bool canMove;
+    private bool isTouchingSide;
 
 
     void Start()
     {
         canMove = false;
-        blockCheck = FindObjectOfType<BlockCheck>();
         playerMovement = FindObjectOfType<PlayerMovement>();
 
         if (transform.position == rightEndCap.position)
@@ -35,7 +34,7 @@ public class DashPushBlocks : MonoBehaviour
         // Determines if the block can move
         if (playerMovement.isDashing)
         {
-            if (blockCheck.isTouchingDashPushBlock)
+            if (isTouchingSide)
             {
                 if (onRightEnd && !playerMovement.facingRight)
                 {
@@ -72,4 +71,19 @@ public class DashPushBlocks : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTouchingSide = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isTouchingSide = false;
+        }
+    }
 }

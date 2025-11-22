@@ -23,6 +23,10 @@ public class ActivateInspectPoint : MonoBehaviour
                 break;
 
             case Level.anger:
+                if (saveManager.dashCutsceneWatched)
+                {
+                    this.gameObject.SetActive(false);
+                }
                 break;
 
             case Level.bargaining:

@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlockCheck : MonoBehaviour
 {
     public bool isTouchingBlock = false;
-    public bool isTouchingDashPushBlock = false;
     [SerializeField] private GameObject pushText;
 
     private void Start()
@@ -20,10 +19,6 @@ public class BlockCheck : MonoBehaviour
             isTouchingBlock = true;
             pushText.SetActive(true);
         }
-        if (collision.gameObject.CompareTag("Dash Push Block"))
-        {
-            isTouchingDashPushBlock = true;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -32,10 +27,6 @@ public class BlockCheck : MonoBehaviour
         {
             isTouchingBlock = false;
             pushText.SetActive(false);
-        }
-        if (collision.gameObject.CompareTag("Dash Push Block"))
-        {
-            isTouchingDashPushBlock = false;
         }
     }
 }

@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 19
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,7 +126,7 @@ TextureImporter:
       name: Level 2 Key Gate_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 0
         width: 7
         height: 32
@@ -147,7 +147,7 @@ TextureImporter:
       name: Level 2 Key Gate_1
       rect:
         serializedVersion: 2
-        x: 42
+        x: 7
         y: 0
         width: 7
         height: 32
@@ -168,7 +168,7 @@ TextureImporter:
       name: Level 2 Key Gate_2
       rect:
         serializedVersion: 2
-        x: 74
+        x: 14
         y: 0
         width: 7
         height: 32
@@ -189,7 +189,7 @@ TextureImporter:
       name: Level 2 Key Gate_3
       rect:
         serializedVersion: 2
-        x: 106
+        x: 21
         y: 0
         width: 7
         height: 32
@@ -210,10 +210,10 @@ TextureImporter:
       name: Level 2 Key Gate_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 1
+        x: 28
+        y: 0
         width: 7
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Level 2 Key Gate_5
       rect:
         serializedVersion: 2
-        x: 170
-        y: 1
+        x: 35
+        y: 0
         width: 7
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,7 +252,7 @@ TextureImporter:
       name: Level 2 Key Gate_6
       rect:
         serializedVersion: 2
-        x: 202
+        x: 42
         y: 0
         width: 7
         height: 32
@@ -273,10 +273,10 @@ TextureImporter:
       name: Level 2 Key Gate_7
       rect:
         serializedVersion: 2
-        x: 234
-        y: 1
+        x: 49
+        y: 0
         width: 7
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,7 +294,7 @@ TextureImporter:
       name: Level 2 Key Gate_8
       rect:
         serializedVersion: 2
-        x: 266
+        x: 56
         y: 0
         width: 7
         height: 32

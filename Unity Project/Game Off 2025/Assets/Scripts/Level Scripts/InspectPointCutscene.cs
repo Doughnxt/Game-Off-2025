@@ -33,6 +33,9 @@ public class InspectPointCutscene : MonoBehaviour
     [Header("Denial")]
     [SerializeField] private GameObject[] stringsOfDenial;
 
+    [Header("Anger")]
+    [SerializeField] private GameObject dashCutscene;
+
 
     private void Start()
     {
@@ -49,6 +52,10 @@ public class InspectPointCutscene : MonoBehaviour
             {
                 item.SetActive(true);
             }
+            this.gameObject.SetActive(false);
+        }
+        if (level == Level.denial && saveManager.dashCutsceneWatched)
+        {
             this.gameObject.SetActive(false);
         }
     }
@@ -78,6 +85,7 @@ public class InspectPointCutscene : MonoBehaviour
                     break;
 
                 case Level.anger:
+                    saveManager.dashObtained = true;
                     break;
 
                 case Level.bargaining:
@@ -167,7 +175,15 @@ public class InspectPointCutscene : MonoBehaviour
         yield return new WaitForSeconds(cutsceneTransitionTime);
         cutsceneTextObject.SetTrigger("Fade");
         yield return new WaitForSeconds(cutsceneTransitionTime);
-        cameraZoomOut = true;
+        if (level == Level.anger)
+        {
+            dashCutscene.SetActive(true);
+            this.gameObject.SetActive(false);
+        }
+        else
+        {
+            cameraZoomOut = true;
+        }
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         this.gameObject.GetComponent<Light2D>().enabled = false;
     }
