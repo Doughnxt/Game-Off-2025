@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start_Menu.unity
-    guid: f8bfb68dd2b8c1545b9a296772af8f6e
-  - enabled: 1
     path: Assets/Scenes/Denial.unity
     guid: 3d2f159116668fa45afb9e4c9135ceae
-  - enabled: 1
-    path: Assets/Scenes/Anger.unity
-    guid: 253215e4c79a324428e555028d1518b9
-  - enabled: 1
-    path: Assets/Scenes/Teaser_End_Screen.unity
-    guid: 4c1e1e4ac3f3b2345b9790e32b593a48
   m_configObjects: {}
