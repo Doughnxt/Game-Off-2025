@@ -60,6 +60,8 @@ public class TransitionToNextLevel : MonoBehaviour
         titleCardBackgroundImage.SetTrigger("Fade");
         yield return new WaitForSeconds(1);
         saveManager.transitioningToNextLevel = true;
+        saveManager.lastSavepointPos = new Vector2(5, 3);
+        saveManager.lastCheckpointPos = new Vector2(5, 3);
         levelLoader.LoadNextLevel();
     }
 }
