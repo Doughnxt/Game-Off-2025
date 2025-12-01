@@ -1159,11 +1159,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &811483880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9198816706610454471, guid: 6d87a8b328c034a41b3f69dd0f9a67ec, type: 3}
-  m_PrefabInstance: {fileID: 8323027384174587581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &906589273 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7182218111675499118, guid: 211c1845ce044d64fa5d31dba6bfe050, type: 3}
@@ -2012,7 +2007,6 @@ GameObject:
   - component: {fileID: 1248129855}
   - component: {fileID: 1248129854}
   - component: {fileID: 1248129853}
-  - component: {fileID: 1248129857}
   m_Layer: 5
   m_Name: Start Menu
   m_TagString: Untagged
@@ -2104,22 +2098,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1248129857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248129852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eebd541e2e83f34dae69c6fb5884248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noteText: {fileID: 993832879}
-  pressAnywhereText: {fileID: 0}
-  levelTransition: {fileID: 811483880}
-  newBackground: {fileID: 0}
 --- !u!1 &1282875734
 GameObject:
   m_ObjectHideFlags: 0
