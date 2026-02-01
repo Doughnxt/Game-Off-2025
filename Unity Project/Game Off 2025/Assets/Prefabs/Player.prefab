@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTouchingBlock: 0
-  isTouchingDashPushBlock: 0
+  pushText: {fileID: 0}
 --- !u!61 &6008963464096632350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MonoBehaviour:
   canWallJumpAgain: 0
   wallJumpBufferTime: 0.15
   wallJumpDuration: 0.1
-  wallJumpStrength: {x: 10, y: 25}
+  wallJumpStrength: {x: 8, y: 25}
   wallSlideSpeed: 10
   dashForce: 20
   dashTime: 0.25

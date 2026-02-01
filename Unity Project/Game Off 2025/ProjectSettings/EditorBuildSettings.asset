@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Start_Menu.unity
     guid: f8bfb68dd2b8c1545b9a296772af8f6e
   - enabled: 1
-    path: Assets/Scenes/Denial.unity
+    path: Assets/Scenes/Denial (teaser).unity
     guid: 3d2f159116668fa45afb9e4c9135ceae
   - enabled: 1
     path: Assets/Scenes/Anger.unity

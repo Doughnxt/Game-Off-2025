@@ -236,13 +236,15 @@ public class PlayerMovement : MonoBehaviour
             isWallJumping = true;
             canWallJump = false;
             StartCoroutine(WallJumpBuffer());
-            rb.velocity = new Vector2(direction * wallJumpStrength.x, wallJumpStrength.y);
+            rb.velocity = new Vector2(-direction * wallJumpStrength.x, wallJumpStrength.y);
         }
     }
 
     private IEnumerator WallJumpBuffer()
     {
+        movementEnabled = false;
         yield return new WaitForSeconds(wallJumpDuration);
+        movementEnabled = true;
         isWallJumping = false;
         yield return new WaitForSeconds(wallJumpBufferTime);
         canWallJump = true;
