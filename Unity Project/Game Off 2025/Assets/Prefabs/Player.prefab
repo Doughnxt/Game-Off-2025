@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 2822805619280331333}
   - component: {fileID: 1100686308478612689}
   - component: {fileID: 7573275314926188234}
+  - component: {fileID: 2292996599670278552}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -399,6 +400,36 @@ MonoBehaviour:
   playerFreezeTime: 0.5
   mainCamera: {fileID: 0}
   screenShake: {fileID: 0}
+--- !u!114 &2292996599670278552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021771865823144841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 781350c0c4c89734aad83e40e8a57035, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &5244597535934782866
 GameObject:
   m_ObjectHideFlags: 0
