@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class PlayerMovement : MonoBehaviour
     private int jumpCounter = 1;
     [SerializeField] private float jumpGraceTime = 0.08f;
     private bool canStillJump = false;
+    private bool jumpPressed;
+    private bool jumpHeld;
+    private bool jumpReleased;
 
     [Header("Wall Jump variables")]
     private WallCheck wallCheck;
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Misc. variables")]
     [SerializeField] private float loadTime = .65f;
     private SaveManager saveManager;
+
 
     // [Header("Sound variables")]
     //private AudioSource walkingSound;
@@ -134,9 +139,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Move(InputAction.CallbackContext context)
+    {
+        if (movementEnabled && !playerHealth.isDead)
+        {
+            direction = context.ReadValue<Vector2>().x;
+        }
+    }
+
     private void Walk()
     {
-        direction = Input.GetAxis("Horizontal");
         if (direction != 0)
         {
             rb.velocity = new Vector2(direction * speed, rb.velocity.y);
@@ -157,6 +169,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            jumpPressed = true;
+        }
+        else if (context.performed)
+        {
+            jumpHeld = true;
+        }
+        else if (context.canceled)
+        {
+            jumpReleased = true;
+            isJumping = false;
+        }
+    }
+
     private void Jump()
     {
         //Falling
@@ -169,8 +198,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Jumping
-        //Jumping
-        if ((Input.GetButtonDown("Jump") && IsGrounded()) || (Input.GetButtonDown("Jump") && canStillJump))
+        if ((jumpPressed && IsGrounded()) || jumpPressed && canStillJump)
         {
             if (jumpCounter == 1)
             {
@@ -181,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Jump") && isJumping == true)
+        if (jumpPressed && isJumping == true)
         {
             if (jumpTimeCounter > 0)
             {
@@ -196,7 +224,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonUp("Jump"))
+        if (jumpReleased)
         {
             isJumping = false;
         }
@@ -205,12 +233,6 @@ public class PlayerMovement : MonoBehaviour
         {
             canStillJump = true;
             jumpCounter = 1;
-
-        }
-
-        if (IsGrounded())
-        {
-            canStillJump = true;
 
         }
 
