@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement variables")]
     [SerializeField] private float speed = 3;
+    private float smoothDirection;
+    [SerializeField] private float smoothTime = 0.1f;
+    private float moveVelocity;
     public float direction;
     public bool movementEnabled;
     public bool facingRight;
@@ -29,9 +32,9 @@ public class PlayerMovement : MonoBehaviour
     private int jumpCounter = 1;
     [SerializeField] private float jumpGraceTime = 0.08f;
     private bool canStillJump = false;
-    private bool jumpPressed;
     private bool jumpHeld;
-    private bool jumpReleased;
+    private float jumpBufferTime = 0.1f;
+    private float jumpBufferCounter;
 
     [Header("Wall Jump variables")]
     private WallCheck wallCheck;
@@ -44,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isWallSliding;
     [SerializeField] private float wallSlideSpeed = 10f;
     private float normalGravity;
+    private float wallJumpDirecton;
 
     [Header("Dash variables")]
     [SerializeField] private float dashForce = 5f;
@@ -110,14 +114,11 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (!isWallJumping)
                     {
-                        Jump();
+                        HeldDownJump();
+                        JumpBuffer();
+                        Fall();
                     }
                 }
-                else
-                {
-                    WallJump();
-                }
-
                 if (saveManager.dashObtained)
                 {
                     Dash();
@@ -149,9 +150,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
+        smoothDirection = Mathf.SmoothDamp(smoothDirection, direction, ref moveVelocity, smoothTime);
+
         if (direction != 0)
         {
-            rb.velocity = new Vector2(direction * speed, rb.velocity.y);
+            rb.velocity = new Vector2(smoothDirection * speed, rb.velocity.y);
             if (direction > 0)
             {
                 facingRight = true;
@@ -171,45 +174,53 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (movementEnabled && !playerHealth.isDead)
         {
-            jumpPressed = true;
+            if (context.performed)
+            {
+                if (wallCheck.isTouchingWall && !IsGrounded())
+                {
+                    WallJump();
+                    return;
+                }
+
+                if (!isWallJumping && !wallCheck.isTouchingWall)
+                {
+                    Jump();
+                    jumpBufferCounter = jumpBufferTime;
+                }
+
+            }
+
+            if (context.canceled)
+            {
+                jumpHeld = false;
+                isJumping = false;
+            }
+
         }
-        else if (context.performed)
-        {
-            jumpHeld = true;
-        }
-        else if (context.canceled)
-        {
-            jumpReleased = true;
-            isJumping = false;
-        }
+
     }
 
     private void Jump()
     {
-        //Falling
-        if (rb.velocity.y < 0)
-        {
-            if (!isWallSliding)
-            {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-            }
-        }
-
         //Jumping
-        if ((jumpPressed && IsGrounded()) || jumpPressed && canStillJump)
+        if (IsGrounded() || canStillJump)
         {
             if (jumpCounter == 1)
             {
                 isJumping = true;
+                jumpHeld = true;
                 jumpTimeCounter = jumpTime;
                 rb.velocity = Vector2.up * jumpStrength;
                 jumpCounter = 0;
             }
         }
+    }
 
-        if (jumpPressed && isJumping == true)
+    private void HeldDownJump()
+    {
+        if (jumpHeld && isJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -224,15 +235,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (jumpReleased)
-        {
-            isJumping = false;
-        }
-
         if (IsGrounded())
         {
             canStillJump = true;
             jumpCounter = 1;
+            isWallJumping = false;
 
         }
 
@@ -240,7 +247,31 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(JumpGracePeriod());
         }
+    }
 
+    private void JumpBuffer()
+    {
+        if (jumpBufferCounter > 0)
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
+        if (jumpBufferCounter > 0 && IsGrounded())
+        {
+            Jump();
+            jumpBufferCounter = 0;
+        }
+    }
+
+    private void Fall()
+    {
+        if (rb.velocity.y < 0)
+        {
+            if (!isWallSliding)
+            {
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            }
+        }
     }
 
     private IEnumerator JumpGracePeriod()
@@ -251,25 +282,27 @@ public class PlayerMovement : MonoBehaviour
 
     private void WallJump()
     {
-        // Switch Animator Controller
-        if (Input.GetButtonDown("Jump") && canWallJump && canWallJumpAgain)
+        wallJumpDuration = -direction;
+        if (canWallJump && canWallJumpAgain)
         {
             canWallJumpAgain = false;
             isWallJumping = true;
             canWallJump = false;
             StartCoroutine(WallJumpBuffer());
-            rb.velocity = new Vector2(-direction * wallJumpStrength.x, wallJumpStrength.y);
+            rb.velocity = new Vector2(wallJumpDuration * wallJumpStrength.x, wallJumpStrength.y);
         }
     }
 
     private IEnumerator WallJumpBuffer()
     {
         movementEnabled = false;
-        yield return new WaitForSeconds(wallJumpDuration);
+        yield return new WaitForSeconds(wallJumpDuration/6);
         movementEnabled = true;
+        yield return new WaitForSeconds((5*wallJumpDuration)/6);
         isWallJumping = false;
         yield return new WaitForSeconds(wallJumpBufferTime);
         canWallJump = true;
+        canWallJumpAgain = true;
     }
 
     private void WallSlide()
